@@ -1,0 +1,33 @@
+.heroes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hero {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+}
+
+.hero-content {
+    margin-bottom: 10px;
+}
+
+.hero-btn button {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    background: none;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.hero-btn button:hover {
+    background-color: black;
+    color: white;
+}
