@@ -31,3 +31,8 @@
     background-color: black;
     color: white;
 }
+
+.hero-image {
+    width: 100px;
+    height: 100px;
+}

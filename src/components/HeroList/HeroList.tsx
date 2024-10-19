@@ -4,32 +4,19 @@ import {fetchHeroes} from "../../services/requestByHeroes";
 import {Hero} from "../../interfaces";
 import Pagination from "../Pagination/Pagination";
 import {usePagination} from "../../hooks/usePagination";
+import Loading from "../Loading/Loading";
+import {useHeroList} from "../../hooks/useHeroList";
+import {useNavigate} from "react-router-dom";
+import path from "node:path";
 
 const HeroList: React.FC = () => {
-    const [heroes, setHeroes] = useState<Hero[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const ITEMS_PER_PAGE = 10;
-    const {page, totalCount, totalPages, setTotal, nextPage, prevPage} = usePagination(1, ITEMS_PER_PAGE);
-
-    useEffect(() => {
-        fetchData(page);
-    }, []);
-
-    const fetchData = async (page: number) => {
-        setIsLoading(true);
-        const response = await fetchHeroes(page, ITEMS_PER_PAGE);
-        console.log(response.data.results);
-        setHeroes(response.data.results);
-        setTotal(response.data.count);
-        setIsLoading(false);
-    };
+   const {heroes, isLoading, page, totalPages, nextPage, prevPage, handleClick} = useHeroList();
 
     return (
         <div>
             <h2>Star Wars Heroes</h2>
-
             {isLoading ? (
-                <p>Loading...</p>
+                <Loading />
             ) : (
                 <div>
                     <div className="heroes">
@@ -38,9 +25,14 @@ const HeroList: React.FC = () => {
                                 <div className="hero-content">
                                     <strong>{hero.name}</strong>
                                 </div>
-                                <div className="hero-btn">
-                                    <button>Check</button>
-                                </div>
+                                <img
+                                    src={`https://starwars-visualguide.com/assets/img/characters/${hero.id}.jpg`}
+                                    alt={hero.name}
+                                    className="hero-image"
+                                />
+                                <button onClick={() => handleClick(`/hero/${hero.id}`)}>
+                                    Check
+                                </button>
                             </div>
                         ))}
                     </div>
