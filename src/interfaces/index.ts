@@ -11,7 +11,7 @@ export interface Hero {
 }
 
 export interface PaginationProps {
-    page: number;
+    currentPage: number;
     totalPages: number;
     prevPage: () => void;
     nextPage: () => void;

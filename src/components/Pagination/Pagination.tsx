@@ -1,19 +1,15 @@
 import React from 'react';
 import {PaginationProps} from "../../interfaces";
 
-const Pagination: React.FC<PaginationProps> = ({page, totalPages, prevPage, nextPage}) => {
+const Pagination: React.FC<PaginationProps> = ({currentPage, totalPages, nextPage, prevPage}) => {
     return (
         <div>
-            <div className="pagination">
-                <button onClick={prevPage} disabled={page === 1}>
-                    Prev
+            <div>
+                <button onClick={prevPage} disabled={currentPage === 1}>
+                    Previous
                 </button>
-                <span>
-                    Page {page} of {totalPages}
-                </span>
-                <button onClick={nextPage}
-                        disabled={page === totalPages}
-                >
+                <span>Page {currentPage} of {totalPages}</span>
+                <button onClick={nextPage} disabled={currentPage === totalPages}>
                     Next
                 </button>
             </div>

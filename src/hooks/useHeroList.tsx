@@ -7,20 +7,18 @@ import {useNavigate} from "react-router-dom";
 export function useHeroList() {
     const [heroes, setHeroes] = useState<Hero[]>([]);
     const [isLoading, setIsLoading] = useState(false);
-    const ITEMS_PER_PAGE = 10;
-    const {page, totalCount, totalPages, setTotal, nextPage, prevPage} = usePagination(1, ITEMS_PER_PAGE);
     const navigate = useNavigate();
+    const {currentPage, totalPages, nextPage, prevPage} = usePagination();
 
     useEffect(() => {
-        fetchData(page);
-    }, []);
+        fetchData();
+    }, [currentPage]);
 
-    const fetchData = async (page: number) => {
+    const fetchData = async () => {
         setIsLoading(true);
-        const response = await fetchHeroes(page, ITEMS_PER_PAGE);
+        const response = await fetchHeroes(currentPage);
         console.log(response.data.results);
         setHeroes(response.data.results);
-        setTotal(response.data.count);
         setIsLoading(false);
     };
 
@@ -31,10 +29,10 @@ export function useHeroList() {
     return {
         heroes,
         isLoading,
-        page,
+        handleClick,
+        currentPage,
         totalPages,
         nextPage,
-        prevPage,
-        handleClick
+        prevPage
     }
 }
