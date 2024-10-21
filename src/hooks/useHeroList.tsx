@@ -17,8 +17,8 @@ export function useHeroList() {
     const fetchData = async () => {
         setIsLoading(true);
         const response = await fetchHeroes(currentPage);
-        console.log(response.data.results);
-        setHeroes(response.data.results);
+        console.log(response.results);
+        setHeroes(response.results);
         setIsLoading(false);
     };
 

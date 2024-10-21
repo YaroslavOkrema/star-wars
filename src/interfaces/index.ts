@@ -1,3 +1,10 @@
+export interface HeroResponse {
+    count: number;
+    next: string | null;
+    previous: string | null;
+    results: Hero[];
+}
+
 export interface Hero {
     name: string;
     url: string;

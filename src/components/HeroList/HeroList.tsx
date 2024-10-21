@@ -3,6 +3,7 @@ import './HeroList.css';
 import Pagination from "../Pagination/Pagination";
 import Loading from "../Loading/Loading";
 import {useHeroList} from "../../hooks/useHeroList";
+import {Hero} from "../../interfaces";
 
 const HeroList: React.FC = () => {
    const {heroes, isLoading, handleClick, currentPage, totalPages, prevPage, nextPage} = useHeroList();
@@ -15,7 +16,7 @@ const HeroList: React.FC = () => {
             ) : (
                 <div>
                     <div className="heroes">
-                        {heroes.map((hero) => (
+                        {heroes.map((hero: Hero) => (
                             <div key={hero.url} className="hero">
                                 <div className="hero-content">
                                     <strong>{hero.name}</strong>
