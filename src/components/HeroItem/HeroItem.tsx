@@ -8,17 +8,18 @@ const HeroItem: React.FC = () => {
 
     return (
        <div>
+           <h1 className="title">Star Wars Heroes</h1>
            {hero && (
-               <div className="hero-container">
+               <div className="item-container">
                    <div className="img">
                        <img
                            src={`https://starwars-visualguide.com/assets/img/characters/${hero.id}.jpg`}
                            alt={hero.name}
-                           className="hero-image"
+                           className="item-photo"
                        />
                    </div>
-                   <div className="hero-info">
-                       <strong>{hero.name}</strong>
+                   <div className="item-info">
+                       <strong className="item-name">{hero.name}</strong>
                        <p>Birth Year: {hero.birth_year}</p>
                        <p>Height: {hero.height}</p>
                        <p>Mass: {hero.mass}</p>

@@ -1,3 +1,23 @@
-.hero-container {
+.title {
+    color: yellow;
+}
+
+.item-container {
     display: flex;
+    background-color: whitesmoke;
+    height: 250px;
+}
+
+.item-name {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.item-photo {
+    width: 200px;
+    height: 250px;
+}
+
+.item-info {
+    margin-left: 30px;
 }

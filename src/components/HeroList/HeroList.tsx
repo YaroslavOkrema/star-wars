@@ -10,7 +10,7 @@ const HeroList: React.FC = () => {
 
     return (
         <div>
-            <h2>Star Wars Heroes</h2>
+            <h1 className="title">Star Wars Heroes</h1>
             {isLoading ? (
                 <Loading />
             ) : (
@@ -19,14 +19,14 @@ const HeroList: React.FC = () => {
                         {heroes.map((hero: Hero) => (
                             <div key={hero.url} className="hero">
                                 <div className="hero-content">
-                                    <strong>{hero.name}</strong>
+                                    <div className="hero-name">{hero.name}</div>
                                 </div>
                                 <img
                                     src={`https://starwars-visualguide.com/assets/img/characters/${hero.id}.jpg`}
                                     alt={hero.name}
                                     className="hero-image"
                                 />
-                                <button onClick={() => handleClick(`/hero/${hero.id}`)}>
+                                <button className="hero-btn" onClick={() => handleClick(`/hero/${hero.id}`)}>
                                     Check
                                 </button>
                             </div>
