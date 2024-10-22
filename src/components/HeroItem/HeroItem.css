@@ -21,3 +21,36 @@
 .item-info {
     margin-left: 30px;
 }
+
+.films-container {
+    margin-top: 50px;
+    width: 100%;
+    height: 250px;
+    background-color: whitesmoke;
+}
+
+.other-info {
+    display: flex;
+}
+
+.film-photo {
+    width: 100px;
+    height: 100px;
+}
+
+.films {
+    display: flex;
+}
+
+.films-list {
+    display: flex;
+    overflow-x: auto;
+}
+
+.film-item {
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}

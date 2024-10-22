@@ -15,6 +15,7 @@ export interface Hero {
     gender: string;
     hair_color: string;
     skin_color: string;
+    films: number[];
 }
 
 export interface PaginationProps {
