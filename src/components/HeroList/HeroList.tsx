@@ -2,7 +2,7 @@ import React from 'react';
 import './HeroList.css';
 import Pagination from "../Pagination/Pagination";
 import Loading from "../Loading/Loading";
-import {useHeroList} from "../../hooks/useHeroList";
+import {useHeroList} from "./useHeroList";
 import {Hero} from "../../interfaces";
 
 const HeroList: React.FC = () => {

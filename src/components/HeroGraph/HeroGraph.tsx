@@ -14,6 +14,7 @@ const HeroGraph: React.FC<HeroGraphProps> = ({ heroId, heroName, films, starship
                 edges={edges}
                 nodesConnectable={false}
                 nodesDraggable={true}
+                zoomOnScroll={false}
             />
         </div>
     );

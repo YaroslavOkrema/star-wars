@@ -1,10 +1,10 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {fetchHeroId} from "../services/requestById";
-import {Film, Hero, Starship} from "../interfaces";
-import {fetchFilmById} from "../services/requestFilmById";
-import {fetchStarshipById} from "../services/requestStarshipById";
-import {useLoading} from "./useLoading";
+import {fetchHeroId} from "../../services/requestById";
+import {Film, Hero, Starship} from "../../interfaces";
+import {fetchFilmById} from "../../services/requestFilmById";
+import {fetchStarshipById} from "../../services/requestStarshipById";
+import {useLoading} from "../Loading/useLoading";
 
 export function useHeroItem(){
     const {id} = useParams<{ id: string }>();

@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
-import {Hero} from "../interfaces";
-import {usePagination} from "./usePagination";
-import {fetchHeroes} from "../services/requestByHeroes";
+import {Hero} from "../../interfaces";
+import {usePagination} from "../Pagination/usePagination";
+import {fetchHeroes} from "../../services/requestByHeroes";
 import {useNavigate} from "react-router-dom";
-import {useLoading} from "./useLoading";
+import {useLoading} from "../Loading/useLoading";
 
 export function useHeroList() {
     const [heroes, setHeroes] = useState<Hero[]>([]);
@@ -18,7 +18,6 @@ export function useHeroList() {
     const fetchData = async () => {
         setIsLoading(true);
         const response = await fetchHeroes(currentPage);
-        console.log(response.results);
         setHeroes(response.results);
         setIsLoading(false);
     };

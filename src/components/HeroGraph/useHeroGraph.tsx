@@ -1,7 +1,12 @@
 import { useMemo } from 'react';
 import { Node, Edge, Position } from 'react-flow-renderer';
 
-export function useHeroGraph(heroId: number, heroName: string, films: { id: number, title: string }[], starships: { id: number, name: string }[]) {
+export function useHeroGraph(
+    heroId: number,
+    heroName: string,
+    films: Array<{ id: number; title: string }>,
+    starships: Array<{ id: number; name: string }>
+) {
     const nodes: Node[] = useMemo(() => {
         const nodesArray: Node[] = [];
 

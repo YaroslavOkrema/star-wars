@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeroItem.css';
-import { useHeroItem } from "../../hooks/useHeroItem";
+import { useHeroItem } from "./useHeroItem";
 import HeroGraph from "../HeroGraph/HeroGraph";
 import Loading from "../Loading/Loading";
 
