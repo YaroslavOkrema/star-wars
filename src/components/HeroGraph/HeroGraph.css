@@ -1,0 +1,16 @@
+.graph-container {
+    height: 850px;
+    width: 100%;
+}
+
+.hero-node {
+    text-align: center;
+}
+
+.film-node {
+    text-align: center;
+}
+
+.starship-node {
+    text-align: center;
+}

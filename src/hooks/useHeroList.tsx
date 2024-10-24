@@ -3,10 +3,11 @@ import {Hero} from "../interfaces";
 import {usePagination} from "./usePagination";
 import {fetchHeroes} from "../services/requestByHeroes";
 import {useNavigate} from "react-router-dom";
+import {useLoading} from "./useLoading";
 
 export function useHeroList() {
     const [heroes, setHeroes] = useState<Hero[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const {isLoading, setIsLoading} = useLoading()
     const navigate = useNavigate();
     const {currentPage, totalPages, nextPage, prevPage} = usePagination();
 

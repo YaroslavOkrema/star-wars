@@ -9,7 +9,7 @@ const HeroList: React.FC = () => {
    const {heroes, isLoading, handleClick, currentPage, totalPages, prevPage, nextPage} = useHeroList();
 
     return (
-        <div>
+        <div className="hero-section">
             <h1 className="title">Star Wars Heroes</h1>
             {isLoading ? (
                 <Loading />

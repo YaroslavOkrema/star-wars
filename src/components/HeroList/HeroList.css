@@ -1,3 +1,7 @@
+.hero-section {
+    height: 100vh;
+}
+
 .title {
     text-align: center;
     color: yellow;
@@ -22,6 +26,7 @@
 
 .hero-name {
     margin-bottom: 20px;
+    font-size: 15px;
 }
 
 .hero-content {

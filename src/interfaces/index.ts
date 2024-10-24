@@ -16,6 +16,7 @@ export interface Hero {
     hair_color: string;
     skin_color: string;
     films: number[];
+    starships: number[];
 }
 
 export interface PaginationProps {
@@ -23,4 +24,21 @@ export interface PaginationProps {
     totalPages: number;
     prevPage: () => void;
     nextPage: () => void;
+}
+
+export interface Film {
+    id: number;
+    title: string;
+}
+
+export interface Starship {
+    id: number;
+    name: string;
+}
+
+export interface HeroGraphProps {
+    heroId: number;
+    heroName: string;
+    films: { id: number, title: string }[];
+    starships: { id: number, name: string }[];
 }

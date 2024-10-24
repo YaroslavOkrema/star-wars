@@ -1,5 +1,5 @@
 import axios from "axios";
-import {Film} from "../../hooks/useHeroItem";
+import {Film} from "../../interfaces";
 
 export const fetchFilmById = async (filmId: number):Promise<Film> => {
     const apiUrl = `https://sw-api.starnavi.io/films/${filmId}/`;
