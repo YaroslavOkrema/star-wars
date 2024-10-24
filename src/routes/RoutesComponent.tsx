@@ -7,7 +7,7 @@ const RoutesComponent: React.FC = () => {
     return (
         <div>
             <Routes>
-                <Route path='/' element={<HeroList />} />
+                <Route path='/star-wars' element={<HeroList />} />
                 <Route path='/hero/:id' element={<HeroItem />} />
             </Routes>
         </div>

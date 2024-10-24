@@ -41,7 +41,7 @@ export function useHeroItem(){
     }, [id]);
 
     const handleBackClick = ():void => {
-        navigate('/');
+        navigate('/star-wars');
     }
 
     return {
