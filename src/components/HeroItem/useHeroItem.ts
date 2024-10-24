@@ -15,7 +15,7 @@ export function useHeroItem(){
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchHero = async () => {
+        const fetchHero = async ():Promise<void> => {
             setIsLoading(true);
             const response = await fetchHeroId(id!);
             setHero(response);
@@ -40,7 +40,7 @@ export function useHeroItem(){
         fetchHero();
     }, [id]);
 
-    const handleBackClick = () => {
+    const handleBackClick = ():void => {
         navigate('/');
     }
 

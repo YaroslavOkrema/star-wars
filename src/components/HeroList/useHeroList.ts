@@ -15,14 +15,14 @@ export function useHeroList() {
         fetchData();
     }, [currentPage]);
 
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
         setIsLoading(true);
         const response = await fetchHeroes(currentPage);
         setHeroes(response.results);
         setIsLoading(false);
     };
 
-    const handleClick = (path: string) => {
+    const handleClick = (path: string): void => {
         navigate(path);
     }
 

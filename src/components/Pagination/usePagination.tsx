@@ -1,19 +1,28 @@
 import {useState} from "react";
 
 export function usePagination() {
-    const [currentPage, setCurrentPage] = useState(1);
+    const storagePage = Number(localStorage.getItem('currentPage'));
+    const [currentPage, setCurrentPage] = useState(storagePage || 1);
     const [totalPages] = useState(9);
 
     const nextPage = () => {
+        const newCurrentPage = currentPage + 1;
+
         if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
+            setCurrentPage(newCurrentPage);
         }
+
+        localStorage.setItem('currentPage', newCurrentPage.toString());
     };
 
     const prevPage = () => {
+        const newCurrentPage = currentPage - 1;
+
         if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
+            setCurrentPage(newCurrentPage);
         }
+
+        localStorage.setItem('currentPage', newCurrentPage.toString());
     };
 
     return {

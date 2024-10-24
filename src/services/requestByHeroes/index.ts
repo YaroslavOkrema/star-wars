@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import {HeroResponse} from "../../interfaces";
 
 export const fetchHeroes = async (page: number): Promise<HeroResponse> => {
